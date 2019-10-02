@@ -1,0 +1,22 @@
+In the paper 'The use of particle distributions in solar system small body dynamics' it was proposed that Importance Sampling would be very beneficial to future statistical simulation of solar system small body dynamics.
+More specifically, for meteoroid simulation.
+
+To illustrate and test the methodology outlined in the paper we set up a forward model.
+
+This forward model is the contents of this repository. As this is a *test model* it is not documented, unit-tested, orof production quality! It is meant to ilustrate a point and prototype the method.
+
+In this model a particle is initialized at 2004-01-01 with orbital parameters:
+
+ - Perihelion distance: 0.95 AU
+ - Eccentricity: 0.6
+ - Inclination: 78 deg 
+ - Argument of periapsis: 180 deg 
+ - Longitude of ascending node: 0 deg 
+ - True anomaly: 180 deg
+
+
+The model has two parameters: Velocity perturbation in the direction of orbital motion vx and velocity perturbation in the radial direction (with respect to the sun) vy. 
+We sampled the model and then propagated the particles with the REBOUND propagators python implementation using the IAS15 integrator.
+The integration included all planets initialized with the JPL de-430 planetary ephemerides. 
+
+The REBOUND code is freely available at http://github.com/hannorein/rebound.
