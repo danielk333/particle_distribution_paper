@@ -3,7 +3,11 @@ More specifically, for meteoroid simulation.
 
 To illustrate and test the methodology outlined in the paper we set up a forward model.
 
-This forward model is the contents of this repository. As this is a *test model* it is not documented, unit-tested, orof production quality! It is meant to ilustrate a point and prototype the method.
+This forward model is the contents of this repository. As this is a *test model* it is not documented, unit-tested, or of production quality! It is meant to illustrate a point and prototype the method.
+
+WARNING:
+ * Planetary states are **not** cached in this version of the code: thus the MCMC sampler performs unnecessary calculations on each iteration as opposed to the DMC sampler.
+
 
 In this model a particle is initialized at 2004-01-01 with orbital parameters:
 
@@ -20,3 +24,8 @@ We sampled the model and then propagated the particles with the REBOUND propagat
 The integration included all planets initialized with the JPL de-430 planetary ephemerides. 
 
 The REBOUND code is freely available at http://github.com/hannorein/rebound.
+
+
+**NOTE**:
+Please contact me if you intend to implement this method in any production level code: we are currently building a large scale toolbox based upon this test model and to minimize the "reinvention of the wheel" we could collaborate on our respective projects.
+
