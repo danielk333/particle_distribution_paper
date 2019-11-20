@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     experiment_name = 'mcmc_is'
     experiment_ref = 'analytic_is'
-    version_mcmc = 2
+    version_mcmc = 3
     version = 3
     version_big = 2
 
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     fout_big_dmc1 = f'./data/{experiment_ref}_v{version_big}_big_dmc.pickle'
     fout_big_dmc2 = f'./data/{experiment_ref}_v{version_big}_big_dmc2.pickle'
     fout_is = f'./data/{experiment_name}_v{version_mcmc}_is.pickle'
-    plot_folder = './plots/'
+    plot_folder = './plots'
 
     target_dist = lambda vx, vy: \
         st.norm.pdf(vx,
