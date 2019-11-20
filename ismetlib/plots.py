@@ -22,7 +22,7 @@ plt.rc('text', usetex=True)
 #plt.style.use('dark_background')
 #mpl.rc('image', cmap='cool')
 
-_IMG_FORMAT = 'eps'
+_IMG_FORMAT = 'pdf'
 
 _font = 22
 _font_t = 28
