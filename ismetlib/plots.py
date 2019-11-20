@@ -22,6 +22,7 @@ plt.rc('text', usetex=True)
 #plt.style.use('dark_background')
 #mpl.rc('image', cmap='cool')
 
+_IMG_FORMAT = 'eps'
 
 _font = 22
 _font_t = 28
@@ -56,7 +57,7 @@ def plot_kde(kde, res, xlim, ylim, plot_folder, name):
         fontsize=_font - 3,
     )
 
-    fig.savefig(plot_folder + '/{}_KDE_PDF.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_KDE_PDF.{}'.format(name.replace(' ', '_'), _IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
 
 def plot_data_sets(data_sets, bins, plot_folder, name):
@@ -82,7 +83,7 @@ def plot_data_sets(data_sets, bins, plot_folder, name):
     plt.suptitle('Integration regions in input vs output space', fontsize=_font_t)
 
     plt.tight_layout(w_pad=2)
-    fig.savefig(plot_folder + '/{}_integration.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_integration.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
 def plot_input_output_correlation(results, chain, plot_folder, name, tmin = None, tmax = None):
 
@@ -127,7 +128,7 @@ def plot_input_output_correlation(results, chain, plot_folder, name, tmin = None
     ax.tick_params('both', labelsize=_font-4)
 
     plt.tight_layout(w_pad=2)
-    fig.savefig(plot_folder + '/{}_phi_map.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_phi_map.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
 def histogram_comparison(
         bins, 
@@ -162,7 +163,7 @@ def histogram_comparison(
     ax.tick_params('both', labelsize=_font-4)
     ax.legend(fontsize=_font, loc='lower left')
 
-    fig.savefig(plot_folder + '/{}_{}_DMC_compare.png'.format(name.replace(' ', '_'), method),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_{}_DMC_compare.{}'.format(name.replace(' ', '_'), method,_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
 
     fig, ax = plt.subplots(1, 1, figsize=(12,8))
@@ -175,7 +176,7 @@ def histogram_comparison(
     ax.set_title('MCMC importance sampling versus DMC error comparison', fontsize=_font_t)
     ax.legend(fontsize=_font)
     
-    fig.savefig(plot_folder + '/{}_MCMCIC_DMC_error_compare.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_MCMCIC_DMC_error_compare.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
 
 
@@ -191,7 +192,7 @@ def histogram_comparison(
     ax[0].legend(fontsize=_font)
     ax[1].legend(fontsize=_font)
 
-    fig.savefig(plot_folder + '/{}_MCMC_DMC_split.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_MCMC_DMC_split.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
 
     fig, ax = plt.subplots(2, 1, figsize=(12,8))
@@ -206,7 +207,7 @@ def histogram_comparison(
     ax[0].legend(fontsize=_font)
     ax[1].legend(fontsize=_font)
 
-    fig.savefig(plot_folder + '/{}_MCMCIC_DMC_split.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_MCMCIC_DMC_split.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
     fig, ax = plt.subplots(2, 1, figsize=(12,8))
     
@@ -220,7 +221,7 @@ def histogram_comparison(
     ax[0].legend(fontsize=_font)
     ax[1].legend(fontsize=_font)
 
-    fig.savefig(plot_folder + '/{}_MCMC_MCMCIC_split.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_MCMC_MCMCIC_split.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
 
 
@@ -252,7 +253,7 @@ def plot_results(results, plot_folder, name, bins=None):
     ax[1].tick_params('both', labelsize=_font-4)
 
     plt.tight_layout(h_pad=2)
-    fig.savefig(plot_folder + '/{}_output_hists.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_output_hists.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
     
 
 
@@ -291,7 +292,7 @@ def plot_metric_and_chains(res, ch, plot_folder, name, limits = None):
     ax.set_xlabel('X-ECI [AU]', fontsize=_font)
     ax.set_ylabel('Y-ECI [AU]', fontsize=_font)
 
-    fig.savefig(plot_folder + '/{}_ECI_dist.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_ECI_dist.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
     '''
     
     fig, ax = plt.subplots(1, 1, sharex=True, figsize=(12,8))
@@ -308,7 +309,7 @@ def plot_metric_and_chains(res, ch, plot_folder, name, limits = None):
     ax.set_ylabel('Across orbit $v_y$ [m/s]', fontsize=_font)
     ax.tick_params('both', labelsize=_font-4)
     
-    fig.savefig(plot_folder + '/{}_model_param_dist.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_model_param_dist.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
 
     fig, axes = plt.subplots(3, 1, sharex=True, figsize=(12,8))
@@ -330,4 +331,4 @@ def plot_metric_and_chains(res, ch, plot_folder, name, limits = None):
     axes[2].tick_params('both', labelsize=_font-4)
 
     plt.tight_layout(h_pad=2)
-    fig.savefig(plot_folder + '/{}_chains.png'.format(name.replace(' ', '_')),bbox_inches='tight')
+    fig.savefig(plot_folder + '/{}_chains.{}'.format(name.replace(' ', '_'),_IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
