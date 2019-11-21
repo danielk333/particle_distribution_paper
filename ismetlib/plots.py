@@ -56,6 +56,7 @@ def plot_kde(kde, res, xlim, ylim, plot_folder, name):
         'Probability',
         fontsize=_font - 3,
     )
+    cbar.ax.tick_params(labelsize=_font)
 
     fig.savefig(plot_folder + '/{}_KDE_PDF.{}'.format(name.replace(' ', '_'), _IMG_FORMAT),bbox_inches='tight',format=_IMG_FORMAT)
 
