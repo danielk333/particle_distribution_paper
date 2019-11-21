@@ -44,7 +44,7 @@ if __name__ == '__main__':
     fout_big_dmc1 = f'./data/{experiment_ref}_v{version_big}_big_dmc.pickle'
     fout_big_dmc2 = f'./data/{experiment_ref}_v{version_big}_big_dmc2.pickle'
     fout_is = f'./data/{experiment_name}_v{version_mcmc}_is.pickle'
-    plot_folder = './plots_analytic/'
+    plot_folder = './plots_analytic'
 
     target_dist = lambda vx, vy: \
         st.norm.pdf(vx,
