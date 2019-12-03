@@ -305,7 +305,7 @@ def plot_metric_and_chains(res, ch, plot_folder, name, limits = None):
         ax.set_xlim(limits[0])
         ax.set_ylim(limits[1])
 
-    ax.set_title(f'{name} input distribution sampling', fontsize=_font_t)
+    ax.set_title(f'{name} input distribution', fontsize=_font_t)
     ax.set_xlabel('Along orbit $v_x$ [m/s]', fontsize=_font)
     ax.set_ylabel('Across orbit $v_y$ [m/s]', fontsize=_font)
     ax.tick_params('both', labelsize=_font-4)
@@ -321,7 +321,7 @@ def plot_metric_and_chains(res, ch, plot_folder, name, limits = None):
         axes[2].plot(t_moid[p]/AU)
 
 
-    axes[0].set_title(f'{name} sampling chains', fontsize=_font_t)
+    axes[0].set_title(f'{name} chains', fontsize=_font_t)
 
     axes[0].set_ylabel('Along orbit $v_x$ [m/s]', fontsize=_font)
     axes[1].set_ylabel('Across orbit $v_y$ [m/s]', fontsize=_font)
